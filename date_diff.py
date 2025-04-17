@@ -13,10 +13,10 @@
 
 import datetime
 
-start_default = '2024/10/06'
+start_default = '2024/10/08'
 end_default = datetime.datetime.now().strftime("%Y/%m/%d")
 
-start = input("请输入起始日期, 格式YYYY/MM/DD, 直接回车使用默认日期：2024/10/06: ")
+start = input("请输入起始日期, 格式YYYY/MM/DD, 直接回车使用默认日期：2024/10/08: ")
 end = input(f'请输入截至日期, 格式YYYY/MM/DD, 直接回车使用当天：{end_default}: ')
 
 if start =="":
