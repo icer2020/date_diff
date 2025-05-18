@@ -13,14 +13,14 @@
 
 import datetime
 
-start_default = '2024/10/08'
-end_default = datetime.datetime.now().strftime("%Y/%m/%d")
+# start_default = '2024/10/08'
+start_default = end_default = datetime.datetime.now().strftime("%Y/%m/%d")
 
 # start = input("请输入起始日期, 格式YYYY/MM/DD, 直接回车使用默认日期：2024/10/08: ")
 # end = input(f'请输入截至日期, 格式YYYY/MM/DD, 直接回车使用当天：{end_default}: ')
 
-start = input("Please enter start date, format: YYYY/MM/DD, if no input then use default date: 2024/10/08: ")
-end = input(f'Please enter end date, format: YYYY/MM/DD, use current date when no input: {end_default}: ')
+start = input(f'Please enter start date, format: YYYY/MM/DD(default is today {start_default}): ')
+end = input(f'Please enter end date, format: YYYY/MM/DD(default is today: {end_default}): ')
 
 
 
@@ -45,4 +45,4 @@ delta = e - s
 
 # 获取天数差
 days = delta.days
-print(f'The days gap between {start} and {end} gap is: {days} day(s)') # 输出结果为31天
+print(f'The days gap between {start} and {end} gap is: {days} day(s). Equal {int(days/7)} week(s) and {days%7} day(s)') # 输出结果为31天
