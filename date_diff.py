@@ -15,33 +15,15 @@ import datetime
 
 # start_default = '2024/10/08'
 start_default = end_default = datetime.datetime.now().strftime("%Y/%m/%d")
-
-# start = input("请输入起始日期, 格式YYYY/MM/DD, 直接回车使用默认日期：2024/10/08: ")
-# end = input(f'请输入截至日期, 格式YYYY/MM/DD, 直接回车使用当天：{end_default}: ')
+end_default = end_default = datetime.datetime.now().strftime("%Y/%m/%d")
 
 start = input(f'Please enter start date, format: YYYY/MM/DD(default is today {start_default}): ')
 end = input(f'Please enter end date, format: YYYY/MM/DD(default is today: {end_default}): ')
 
+start = start_default if start=="" else start
+end = end_default if end=="" else end
 
-
-if start =="":
-    start = start_default
-if end =="":
-    end = end_default
-
-s_y = int(start.split('/')[0].lstrip('0'))
-s_m = int(start.split('/')[1].lstrip('0'))
-s_d = int(start.split('/')[2].lstrip('0'))
-
-e_y = int(end.split('/')[0].lstrip('0'))
-e_m = int(end.split('/')[1].lstrip('0'))
-e_d = int(end.split('/')[2].lstrip('0'))
-
-s = datetime.date(s_y, s_m, s_d)
-e = datetime.date(e_y, e_m, e_d)
-
-# 计算两个日期之间的差异
-delta = e - s
+delta = datetime.datetime.strptime(end,"%Y/%m/%d") -  datetime.datetime.strptime(start,"%Y/%m/%d")
 
 # 获取天数差
 days = delta.days
